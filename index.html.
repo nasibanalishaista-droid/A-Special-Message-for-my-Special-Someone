@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Qalbi</title>
+
+<style>
+body {
+  background: #f6f1ec;
+  font-family: "Georgia", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.envelope-container {
+  position: relative;
+  width: 320px;
+  height: 220px;
+  cursor: pointer;
+}
+
+.envelope {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #d9bfa9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  border-bottom: 110px solid #c4a488;
+  transform-origin: top;
+  transition: transform 1s;
+}
+
+.letter {
+  position: absolute;
+  bottom: -100%;
+  width: 90%;
+  left: 5%;
+  background: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  transition: bottom 1.2s;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.open .flap {
+  transform: rotateX(180deg);
+}
+
+.open .letter {
+  bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="envelope-container" onclick="openEnvelope()">
+  <div class="envelope">
+    <div class="flap"></div>
+
+    <div class="letter">
+      <strong>Qalbi, Happy 27th Birthday to you 🎂</strong><br><br>
+
+      You are the answer to my prayers and my most cherished gift from Allah.
+      I hope today reminds you of how loved you are,
+      not just by the people around you,
+      but by me who already believes in you deeply.<br><br>
+
+      I pray that you get all the happiness in the world
+      and achieve great levels of success.
+      May Allah bless you immensely.<br><br>
+
+      ❤️ <strong>I love you very much.</strong><br>
+      Today, tomorrow, and in every future we share.<br><br>
+
+      <em>Yours forever,</em><br>
+      Shaista<br><br>
+
+      <small>p.s. this is my first time doing this so I hope I did well 😁</small>
+    </div>
+  </div>
+</div>
+
+<audio id="music">
+  <source src="youll-be-in-my-heart.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function openEnvelope() {
+  document.querySelector('.envelope-container').classList.add('open');
+  document.getElementById('music').play();
+}
+</script>
+
+</body>
+</html>
